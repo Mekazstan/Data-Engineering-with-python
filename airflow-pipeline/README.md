@@ -1,0 +1,41 @@
+# Building a CSV to a JSON data converter pipeline
+
+The DAG in the code prints out a message using Bash, then reads the CSV and print a list of all the names.
+
+
+
+
+
+
+
+
+# Installing Apache Airflow
+sudo apt-get install software-properties-common
+sudo apt-add-repository universe
+sudo apt-get update
+sudo apt-get install python-setuptools
+sudo apt-get install python3-pip
+python3 -m pip install --upgrade pip
+sudo apt-get install libmysqlclient-dev
+sudo apt-get install libssl-dev
+sudo apt-get install libkrb5-dev
+
+mkdir ~/airflow
+export AIRFLOW_HOME=~/airflow
+pip install apache-airflow
+pip install typing_extensions
+
+# Checking if installation worked
+airflow version
+
+# Intializing the database
+airflow db init
+
+# Create user
+airflow users create --username admin --firstname Stan --lastname Adminstrator --role Admin --email mekastans@gmail.com
+airflow users list
+
+airflow webserver -p 8081 --daemon
+airflow scheduler --daemon
+
+http://localhost:8081

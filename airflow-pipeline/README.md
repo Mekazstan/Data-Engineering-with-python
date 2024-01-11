@@ -1,5 +1,4 @@
 # Building a CSV to a JSON data converter pipeline
-
 The DAG in the code prints out a message using Bash, then reads the CSV and print a list of all the names.
 
 
@@ -35,7 +34,21 @@ airflow db init
 airflow users create --username admin --firstname Stan --lastname Adminstrator --role Admin --email mekastans@gmail.com
 airflow users list
 
+# Running in foreground
+airflow webserver
+airflow scheduler
+
+# Running in background
 airflow webserver -p 8081 --daemon
 airflow scheduler --daemon
 
+# Shut down scheduler & server running in background
+kill $(cat ~/airflow/airflow-scheduler.pid)
+kill $(cat ~/airflow/airflow-webserver.pid)
+
 http://localhost:8081
+
+
+# Applying changes made in config file
+- Shutdown webserver & scheduler
+- airflow db reset

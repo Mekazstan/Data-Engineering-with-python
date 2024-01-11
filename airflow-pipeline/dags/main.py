@@ -14,23 +14,23 @@ from airflow.operators.python_operator import PythonOperator
 # Function to read a CSV file and writes it out to JSON
 def CSVToJson():
     # Reading the csv
-    df=pd.read_CSV('/home/chukwuemeka/Documents/DataWithPY/data.CSV')
+    df=pd.read_csv('/home/chukwuemeka/Documents/DataWithPY/data.csv')
     for i,r in df.iterrows():
         print(r['name'])
-        df.to_JSON('fromAirflow.JSON',orient='records')
+        df.to_json('/home/chukwuemeka/Documents/DataWithPY/fromAirflow.json',orient='records')
         
 # DAG Arguments        
 default_args = {
     'owner': 'mekazstan',
-    'start_date': dt.datetime(2023, 1, 10),
+    'start_date': dt.datetime(2024, 1, 11), # When process starts
     'retries': 1,
-    'retry_delay': dt.timedelta(minutes=5),
+    'retry_delay': dt.timedelta(minutes=5), # Wait for 5mins before another retry
 }
 
 with DAG('MyCSVDAG', # Dag ID
     default_args=default_args,
-    schedule_interval=timedelta(minutes=5), # How often to run the dag
-    # '0 * * * *',
+    schedule_interval=timedelta(minutes=240) # How often to run the dag (When next to run)
+    # or use '@hourly'
 ) as dag:
     print_starting = BashOperator(task_id='starting', bash_command='echo "I am reading the CSV now....."')
     CSVJson = PythonOperator(task_id='convertCSVtoJson', python_callable=CSVToJson)
@@ -39,7 +39,7 @@ with DAG('MyCSVDAG', # Dag ID
 # CSVJson.set_upstream(print_starting)
 
 print_starting >> CSVJson
-CSVJson << print_starting
+# CSVJson << print_starting
     
     
     

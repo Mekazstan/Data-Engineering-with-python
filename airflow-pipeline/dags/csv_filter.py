@@ -3,6 +3,9 @@ from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 import pandas as pd
 
+# 2nd method Dag creation
+
+# Record filtering function
 def filter_records():
     # Read the CSV file
     df = pd.read_csv('/home/chukwuemeka/Documents/DataWithPY/data.csv')

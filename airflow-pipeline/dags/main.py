@@ -10,6 +10,7 @@ from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from airflow.operators.python_operator import PythonOperator
 
+# 1st method Dag creation
 
 # Function to read a CSV file and writes it out to JSON
 def CSVToJson():

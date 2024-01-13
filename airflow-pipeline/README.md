@@ -58,7 +58,7 @@ http://localhost:8081
 ## Installing MYSQL
 sudo apt install mysql-server
 ## Checking & Starting MYSQL
-sudo systemctl status mysql
+sudo systemctl status mysql or systemctl is-active mysql
 sudo systemctl start mysql
 ## Stopping MYSQL
 sudo service MYSQL stop

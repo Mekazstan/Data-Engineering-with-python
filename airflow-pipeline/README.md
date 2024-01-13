@@ -52,3 +52,24 @@ http://localhost:8081
 # Applying changes made in config file
 - Shutdown webserver & scheduler
 - airflow db reset
+
+
+# -------- MYSQL --------
+## Installing MYSQL
+sudo apt install mysql-server
+## Checking & Starting MYSQL
+sudo systemctl status mysql
+sudo systemctl start mysql
+## Stopping MYSQL
+sudo service MYSQL stop
+
+## Connecting to postgres
+sudo mysql
+sudo mysql -u root -p
+## Setting Password
+sudo mysql_secure_installation
+ALTER USER 'root@localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+
+# Install MYSQL Workbench using snap
+sudo snap install mysql-workbench-community
+

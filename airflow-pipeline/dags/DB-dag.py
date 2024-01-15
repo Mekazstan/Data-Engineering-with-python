@@ -112,8 +112,8 @@ with DAG('MyDBDAG', # Dag ID
     default_args=default_args,
     schedule_interval=timedelta(minutes=480)
 ) as dag:
-    extract_from_mysql = PythonOperator(task_id='mysql_extractor', python_callable=extract_from_mysql)
-    write_to_mongodb_collection = PythonOperator(task_id='mongodb_writer', python_callable=write_to_mongodb_collection)
+    getData = PythonOperator(task_id='mysql_extractor', python_callable=extract_from_mysql)
+    insertData = PythonOperator(task_id='mongodb_writer', python_callable=write_to_mongodb_collection)
 
 # Order Sequence
-extract_from_mysql >> write_to_mongodb_collection
+getData >> insertData

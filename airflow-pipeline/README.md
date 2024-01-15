@@ -68,7 +68,7 @@ sudo mysql
 sudo mysql -u root -p
 ## Setting Password
 sudo mysql_secure_installation
-ALTER USER 'root@localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+ALTER USER 'root@localhost' IDENTIFIED WITH mysql_native_password BY '********';
 
 # Install MYSQL Workbench using snap
 sudo snap install mysql-workbench-community

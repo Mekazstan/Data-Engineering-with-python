@@ -5,7 +5,7 @@ import csv
 mysql_config = {
     'host': 'localhost',
     'user': 'root',
-    'password': 'R0ot!23#',
+    'password': '********',
     'database': 'dataengineering',
 }
 

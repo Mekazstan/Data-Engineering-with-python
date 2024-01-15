@@ -1,6 +1,7 @@
 # -------- MONGODB --------
 ## Installing MONGODB
 https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+pip install pymongo
 
 ## Starting MONGODB
 sudo systemctl start mongod

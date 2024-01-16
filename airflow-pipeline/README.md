@@ -52,3 +52,5 @@ http://localhost:8081
 # Applying changes made in config file
 - Shutdown webserver & scheduler
 - airflow db reset
+
+Passw0rd!23

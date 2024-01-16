@@ -3,7 +3,7 @@
     - Extract data from MYSQL DB & save it as a CSV file.
     - Read it in and write it to a Mongodb collection as individual documents. 
     
-    NB: Each tasks are made atomic to easily debug point of failure if any.
+    NB: Each tasks are made atomic & independent (Running on its own) to easily debug point of failure if any.
 """
 
 # Dag Scheduling libraries

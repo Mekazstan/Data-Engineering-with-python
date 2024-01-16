@@ -25,7 +25,7 @@ def extract_from_mysql():
     mysql_config = {
         'host': 'localhost',
         'user': 'root',
-        'password': '********',
+        'password': 'R0ot!23#',
         'database': 'dataengineering',
     }
 

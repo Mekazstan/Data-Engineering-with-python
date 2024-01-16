@@ -1,13 +1,6 @@
 # Building a CSV to a JSON data converter pipeline
 The DAG in the code prints out a message using Bash, then reads the CSV and print a list of all the names.
 
-
-
-
-
-
-
-
 # Installing Apache Airflow
 sudo apt-get install software-properties-common
 sudo apt-add-repository universe
@@ -52,5 +45,3 @@ http://localhost:8081
 # Applying changes made in config file
 - Shutdown webserver & scheduler
 - airflow db reset
-
-Passw0rd!23

@@ -11,4 +11,4 @@ print(df.dtypes)
 print(df.head(5))
 
 # Setting the number of columns to show
-pd.set_option('display.max_columns', 500)
+pd.set_option('display.max_columns', 1500)

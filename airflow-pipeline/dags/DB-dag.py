@@ -25,7 +25,7 @@ def extract_from_mysql():
     mysql_config = {
         'host': 'localhost',
         'user': 'root',
-        'password': 'R0ot!23#',
+        'password': '*********',
         'database': 'dataengineering',
     }
 
@@ -80,7 +80,7 @@ def write_to_mongodb_collection():
     collection = db['users']
 
     # Specify the CSV file path
-    csv_file_path = 'user_data.csv'
+    csv_file_path = 'users_data.csv'
     # Read data from CSV and insert into MongoDB collection
     with open(csv_file_path, 'r') as csv_file:
         csv_reader = csv.DictReader(csv_file)

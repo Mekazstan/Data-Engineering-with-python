@@ -8,8 +8,7 @@
 import datetime as dt
 from datetime import timedelta
 
-# Data Transformation/Manipulation library
-import pandas as pd
+# Data storage library
 import csv
 
 # Task Building libraries

@@ -17,7 +17,7 @@ import pandas as pd
 # Task Building libraries
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
-from airflow.operators.python_operator import BashOperator
+from airflow.operators.bash_operator import BashOperator
 
 
 # Define a function to map city to country based on the starting letter
@@ -50,6 +50,10 @@ def filterData():
     # Filter the DataFrame based on the 'country' column
     filtered_df = df[df['country'] == 'Country A']
     filtered_df.to_csv('/home/chukwuemeka/Documents/DataWithPY/airflow-pipeline/country_a_users.csv')
+    print("""
+          Done
+          With
+          Filter.....""")
 
 # DAG Arguments        
 default_args = {
@@ -59,7 +63,7 @@ default_args = {
     'retry_delay': dt.timedelta(minutes=5),
 }
 
-with DAG('MyDBDAG', # Dag ID
+with DAG('DataCleanerDag', # Dag ID
     default_args=default_args,
     schedule_interval=timedelta(minutes=480)
 ) as dag:
